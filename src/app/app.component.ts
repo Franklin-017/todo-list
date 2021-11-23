@@ -11,11 +11,13 @@ export class AppComponent {
 
 
   addTodoItem() {
-    this.todoList.push({
-      id: this.todoList.length,
-      item: this.todoItem
-    });
-    this.todoItem = '';
+    if(this.todoItem !== '') {
+      this.todoList.push({
+        id: this.todoList.length,
+        item: this.todoItem
+      });
+      this.todoItem = '';
+    }
   }
 
   removeTodo(itemId: number) {
